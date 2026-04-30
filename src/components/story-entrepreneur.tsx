@@ -162,7 +162,7 @@ export default function StoryEntrepreneur() {
               <Reveal delay={0.08} direction="left">
                 <p style={{
                   fontSize: 'clamp(0.82rem,1vw,0.95rem)',
-                  lineHeight: 1.85,
+                  lineHeight: 1.75,
                   color: 'rgba(240,237,232,0.55)',
                   fontFamily: 'var(--font-display)',
                   letterSpacing: '0.03em',
@@ -194,8 +194,8 @@ export default function StoryEntrepreneur() {
                       borderBottom: `1px solid ${GOLD_FAINT}`,
                       flex: 1,
                       width: '100%',
-                      minHeight: 'clamp(90px,12vh,999px)',
-                      padding: 'clamp(1rem,2.5vw,0px) 0',
+                      minHeight: 'clamp(100px,13vh,999px)',
+                      padding: 'clamp(1.2rem,2.8vw,1.6rem) 0',
                       overflow: 'hidden',
                       cursor: 'default',
                     }}
@@ -241,7 +241,7 @@ export default function StoryEntrepreneur() {
                     <motion.div
                       variants={{ hovered: { x: 6 }, initial: { x: 0 } }}
                       transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                      style={{ display: 'flex', flexDirection: 'column', gap: '5px', minWidth: 0, flex: 1, position: 'relative' }}
+                      style={{ display: 'flex', flexDirection: 'column', gap: '8px', minWidth: 0, flex: 1, position: 'relative' }}
                     >
                       <span style={{ fontSize: 'clamp(0.62rem,0.9vw,0.82rem)', color: TEXT, fontFamily: 'var(--font-display)', letterSpacing: '0.07em', textTransform: 'uppercase', lineHeight: 1.4, wordBreak: 'break-word' }}>
                         {s.unit}
@@ -266,13 +266,13 @@ export default function StoryEntrepreneur() {
                     borderRadius: '6px',
                     overflow: 'hidden',
                     border: '1px solid rgba(248,248,248,0.07)',
-                    height: 'clamp(120px,22vh,240px)',
+                    height: 'clamp(140px,26vh,280px)',
                   }}
                 >
                   <motion.img
                     src="/entrepreneur-bg.png"
                     alt="Esports arena"
-                    variants={{ hovered: { scale: 1.035, filter: 'grayscale(0%) brightness(1.0)' }, initial: { scale: 1, filter: 'grayscale(30%) brightness(0.85)' } }}
+                    variants={{ hovered: { scale: 1.035, filter: 'grayscale(0%) brightness(1.0)' }, initial: { scale: 1, filter: 'grayscale(20%) brightness(0.92)' } }}
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                     style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 25%', display: 'block' }}
                   />

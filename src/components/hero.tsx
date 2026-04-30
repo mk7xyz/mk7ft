@@ -152,15 +152,15 @@ export default function Hero() {
               rel="noopener noreferrer"
               className="relative flex items-center gap-2 rounded-full transition-all duration-300 hover:brightness-115"
               style={{
-                padding: 'clamp(0.5rem,1.2vh,0.85rem) clamp(1rem,2.5vw,2rem)',
+                padding: 'clamp(0.6rem,1.4vh,1rem) clamp(1.2rem,2.5vw,2rem)',
                 background: 'linear-gradient(105deg, #c8903a 0%, #d4a84b 50%, #c8a040 100%)',
                 color: '#0c0a06',
                 fontFamily: 'var(--font-display)',
-                fontSize: 'clamp(0.58rem,0.8vw,0.72rem)',
+                fontSize: 'clamp(0.65rem,0.85vw,0.78rem)',
                 letterSpacing: '0.18em',
                 textTransform: 'uppercase',
                 fontWeight: 700,
-                boxShadow: '0 0 24px rgba(200,144,58,0.45), 0 2px 10px rgba(0,0,0,0.5)',
+                boxShadow: '0 0 28px rgba(200,144,58,0.5), 0 2px 12px rgba(0,0,0,0.5)',
               }}
             >
               LinkedIn
@@ -222,8 +222,8 @@ export default function Hero() {
               color: '#f0ede8',
               fontFamily: 'var(--font-editorial)',
               fontWeight: 300,
-              lineHeight: 0.87,
-              letterSpacing: '-0.03em',
+              lineHeight: 0.85,
+              letterSpacing: '-0.04em',
             }}
           >
             Muhammad
@@ -238,8 +238,8 @@ export default function Hero() {
               fontSize: 'clamp(4.5rem,13vw,14rem)',
               fontFamily: 'var(--font-editorial)',
               fontWeight: 300,
-              lineHeight: 0.87,
-              letterSpacing: '-0.03em',
+              lineHeight: 0.85,
+              letterSpacing: '-0.04em',
               fontStyle: 'italic',
               background: 'linear-gradient(105deg, #d4a84b 0%, #c8b89a 40%, #e8d5a8 70%, #c8903a 100%)',
               WebkitBackgroundClip: 'text',
@@ -328,6 +328,7 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.85 }}
         className="relative z-10 flex-shrink-0 pb-6 pt-4"
+        style={{ borderTop: '1px solid rgba(200,184,154,0.07)' }}
       >
         <div className="flex items-center justify-center gap-5 mb-6">
           <span className="h-px flex-1 max-w-[70px]" style={{ background: 'linear-gradient(90deg, transparent, rgba(200,184,154,0.12))' }} />
@@ -362,18 +363,18 @@ export default function Hero() {
                 whileHover={{ opacity: 1 }}
                 transition={{ duration: 0.25, ease: 'easeOut' }}
                 style={{
-                  margin: '0 clamp(1.8rem,4.5vw,4.5rem)',
+                  margin: '0 clamp(2rem,5vw,5rem)',
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  opacity: 0.22,
+                  opacity: 0.30,
                   flexShrink: 0,
                   textDecoration: 'none',
                 }}
               >
                 <span style={{
-                  fontSize: 'clamp(0.58rem,0.85vw,0.72rem)',
-                  letterSpacing: '0.22em',
+                  fontSize: 'clamp(0.6rem,0.85vw,0.74rem)',
+                  letterSpacing: '0.16em',
                   textTransform: 'uppercase',
                   whiteSpace: 'nowrap',
                   color: 'rgba(240,237,232,0.9)',

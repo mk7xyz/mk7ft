@@ -4,10 +4,10 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const CHAPTERS = [
-  { id: 'story',     label: 'I' },
-  { id: 'chapter-2', label: 'II' },
-  { id: 'chapter-3', label: 'III' },
-  { id: 'chapter-4', label: 'IV' },
+  { id: 'story',     label: 'I',   name: 'Entrepreneur' },
+  { id: 'chapter-2', label: 'II',  name: 'Consultant'   },
+  { id: 'chapter-3', label: 'III', name: 'Operator'     },
+  { id: 'chapter-4', label: 'IV',  name: 'Student'      },
 ];
 
 export default function ChapterNav() {
@@ -67,13 +67,34 @@ export default function ChapterNav() {
                   all: 'unset',
                   display: 'flex',
                   alignItems: 'center',
-                  justifyContent: 'center',
-                  width: '22px',
+                  justifyContent: 'flex-end',
+                  gap: '8px',
                   height: '22px',
                   cursor: 'pointer',
                   position: 'relative',
                 }}
               >
+                <AnimatePresence>
+                  {isActive && (
+                    <motion.span
+                      key="label"
+                      initial={{ opacity: 0, x: 8 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: 8 }}
+                      transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                      style={{
+                        fontSize: '0.55rem',
+                        letterSpacing: '0.18em',
+                        textTransform: 'uppercase',
+                        fontFamily: 'var(--font-display)',
+                        color: 'rgba(200,144,58,0.65)',
+                        whiteSpace: 'nowrap',
+                      }}
+                    >
+                      {ch.name}
+                    </motion.span>
+                  )}
+                </AnimatePresence>
                 <motion.span
                   animate={{
                     width: isActive ? '6px' : '4px',
@@ -82,7 +103,7 @@ export default function ChapterNav() {
                     boxShadow: isActive ? '0 0 8px rgba(200,144,58,0.55)' : 'none',
                   }}
                   transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                  style={{ borderRadius: '50%', display: 'block' }}
+                  style={{ borderRadius: '50%', display: 'block', flexShrink: 0 }}
                 />
               </button>
             );

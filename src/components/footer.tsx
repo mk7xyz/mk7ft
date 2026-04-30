@@ -28,7 +28,7 @@ export default function Footer() {
         {/* Main CTA */}
         <div
           className="text-center"
-          style={{ padding: 'clamp(2rem,5vh,4rem) clamp(1.2rem,5vw,5rem) clamp(3rem,7vh,6rem)', maxWidth: '1100px', margin: '0 auto' }}
+          style={{ padding: 'clamp(2.5rem,6vh,5rem) clamp(1.2rem,5vw,5rem) clamp(4rem,8vh,7rem)', maxWidth: '1100px', margin: '0 auto' }}
         >
           <FadeIn>
             <span style={{
@@ -47,12 +47,12 @@ export default function Footer() {
           <FadeIn delay={0.08}>
             <h2
               style={{
-                fontSize: 'clamp(3.5rem,9vw,10rem)',
+                fontSize: 'clamp(3.8rem,10vw,11rem)',
                 color: '#f0ede8',
                 fontFamily: 'var(--font-editorial)',
                 fontWeight: 300,
-                lineHeight: 0.9,
-                letterSpacing: '-0.03em',
+                lineHeight: 0.88,
+                letterSpacing: '-0.04em',
                 marginBottom: 'clamp(2.5rem,5vh,4rem)',
               }}
             >
