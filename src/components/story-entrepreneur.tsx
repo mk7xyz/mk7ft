@@ -16,7 +16,7 @@ const VENTURES = [
   { name: 'Events & Broadcasting Company', desc: 'Production and Talent Management',     tag: 'Acquired', url: null               },
   { name: 'Frags',                         desc: 'AI-powered gaming highlight clips',    tag: 'Inactive', url: null               },
   { name: 'SPRK',                          desc: 'EdTech platform for student success',  tag: 'Active',   url: 'https://sprk.co'  },
-  { name: 'JRVS',                          desc: 'AI productivity & workflow assistant', tag: 'Active',   url: 'https://jrvs.pro' },
+  { name: 'JRVS',                          desc: 'AI consulting and workflow agent',     tag: 'Active',   url: 'https://jrvs.pro' },
   { name: 'Aster',                         desc: "Women's health & wellness platform",   tag: 'Active',   url: 'https://aster.fit'},
 ];
 

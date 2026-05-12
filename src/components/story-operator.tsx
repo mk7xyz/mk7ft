@@ -17,7 +17,7 @@ const STATS = [
 ];
 
 const BODY_LINES = [
-  'I operate anywhere, under anything.',
+  'One of the most diverse skill sets in the country.',
 ];
 
 export default function StoryOperator() {

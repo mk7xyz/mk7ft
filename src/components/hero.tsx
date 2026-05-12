@@ -330,31 +330,34 @@ export default function Hero() {
         className="relative z-10 flex-shrink-0 pb-8 pt-6"
         style={{ borderTop: '1px solid rgba(200,184,154,0.07)' }}
       >
-        <div className="flex items-center justify-center gap-10 md:gap-16">
-          {[
-            { name: 'Forbes',  url: 'https://forbes.com'       },
-            { name: 'ESPN',    url: 'https://espn.com'         },
-            { name: 'TSM',     url: 'https://tsm.gg'           },
-            { name: 'TEDx',    url: 'https://ted.com/tedx'     },
-          ].map(p => (
+        <div style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+          alignItems: 'center',
+          gap: 'clamp(0.6rem,2vw,1.4rem) clamp(1.2rem,3.5vw,3rem)',
+          padding: '0 clamp(1.2rem,5vw,4rem)',
+        }}>
+          {PARTNERS.map(p => (
             <a
               key={p.name}
               href={p.url}
               target="_blank"
               rel="noopener noreferrer"
               style={{
-                fontSize: 'clamp(0.6rem,0.85vw,0.74rem)',
-                letterSpacing: '0.22em',
+                fontSize: 'clamp(0.68rem,0.9vw,0.82rem)',
+                letterSpacing: '0.2em',
                 textTransform: 'uppercase',
                 color: 'rgba(240,237,232,0.9)',
                 fontFamily: 'var(--font-editorial)',
                 fontWeight: 500,
-                opacity: 0.28,
+                opacity: 0.32,
                 textDecoration: 'none',
                 transition: 'opacity 0.25s ease',
+                whiteSpace: 'nowrap',
               }}
-              onMouseEnter={e => (e.currentTarget.style.opacity = '0.75')}
-              onMouseLeave={e => (e.currentTarget.style.opacity = '0.28')}
+              onMouseEnter={e => (e.currentTarget.style.opacity = '0.85')}
+              onMouseLeave={e => (e.currentTarget.style.opacity = '0.32')}
             >
               {p.name}
             </a>
