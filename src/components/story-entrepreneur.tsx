@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { LineReveal, Reveal, SectionReveal } from '@/components/ui/motion';
-import { GOLD, GOLD_DIM, GOLD_FAINT, TEXT, CHAPTER_GRADIENT } from '@/lib/tokens';
+import { GOLD, GOLD_FAINT, TEXT, CHAPTER_GRADIENT } from '@/lib/tokens';
 import { useCountUp } from '@/hooks/use-count-up';
 
 function AnimatedStat({ value, style }: { value: string; style: React.CSSProperties }) {

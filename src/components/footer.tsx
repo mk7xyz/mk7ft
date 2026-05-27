@@ -9,6 +9,13 @@ export default function Footer() {
     if (calLoaded.current) return;
     calLoaded.current = true;
 
+    // Preload Cal.com embed script immediately so it's ready before user scrolls
+    const preload = document.createElement('link');
+    preload.rel = 'preload';
+    preload.as = 'script';
+    preload.href = 'https://app.cal.com/embed/embed.js';
+    document.head.appendChild(preload);
+
     const script = document.createElement('script');
     script.type = 'text/javascript';
     script.innerHTML = `
@@ -56,7 +63,7 @@ export default function Footer() {
       <div style={{
         maxWidth: '1100px',
         margin: '0 auto',
-        padding: 'clamp(4.5rem,9vh,8rem) clamp(1.5rem,6vw,5rem)',
+        padding: 'clamp(3rem,6vh,5rem) clamp(1.5rem,6vw,5rem)',
       }}>
 
         <h2 style={{
@@ -78,7 +85,7 @@ export default function Footer() {
           letterSpacing: '-0.04em',
           fontStyle: 'italic',
           color: 'rgba(237,237,237,0.4)',
-          marginBottom: 'clamp(3rem,6vh,5rem)',
+          marginBottom: 'clamp(2rem,4vh,3.5rem)',
         }}>
           let&apos;s chat.
         </h2>

@@ -3,16 +3,8 @@
 import { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { LineReveal, Reveal, SectionReveal } from '@/components/ui/motion';
-import { GOLD, GOLD_DIM, GOLD_FAINT, CHAPTER_GRADIENT } from '@/lib/tokens';
-import {
-  SiPython, SiGithub, SiFigma, SiAdobephotoshop, SiGooglecloud, SiNotion,
-  SiCanva, SiHubspot, SiGoogleads, SiMeta, SiZapier, SiSalesforce, SiTiktok,
-  SiInstagram, SiJira, SiVercel, SiObsstudio, SiDiscord, SiStripe, SiShopify,
-  SiMailchimp, SiAnthropic, SiSemrush, SiApollographql, SiFacebook, SiSlack, SiOpenai,
-} from 'react-icons/si';
-import { FaDatabase, FaRobot, FaStore, FaBullseye, FaFunnelDollar, FaPaintBrush, FaLayerGroup } from 'react-icons/fa';
-import { RiClapperboardFill, RiMicrosoftFill } from 'react-icons/ri';
-import { TbBrandZoom } from 'react-icons/tb';
+import { GOLD, GOLD_FAINT, CHAPTER_GRADIENT } from '@/lib/tokens';
+import { SKILLS } from '@/lib/skills';
 
 const USF_ACHIEVEMENTS = [
   { label: 'Orientation Leader',  detail: 'Selected from 250+ applicants', stat: '250+' },
@@ -65,49 +57,6 @@ const BEYOND = [
   },
 ];
 
-const SKILLS: { label: string; icon: React.ReactNode }[] = [
-  { label: 'SQL',              icon: <FaDatabase size={12} />          },
-  { label: 'Python',           icon: <SiPython size={12} />            },
-  { label: 'Prompt Eng.',      icon: <FaRobot size={12} />             },
-  { label: 'Figma',            icon: <SiFigma size={12} />             },
-  { label: 'Photoshop',        icon: <SiAdobephotoshop size={12} />    },
-  { label: 'GitHub',           icon: <SiGithub size={12} />            },
-  { label: 'Google Cloud',     icon: <SiGooglecloud size={12} />       },
-  { label: 'Notion',           icon: <SiNotion size={12} />            },
-  { label: 'Canva',            icon: <SiCanva size={12} />             },
-  { label: 'HubSpot',          icon: <SiHubspot size={12} />           },
-  { label: 'Google Ads',       icon: <SiGoogleads size={12} />         },
-  { label: 'Meta Ads',         icon: <SiMeta size={12} />              },
-  { label: 'E-Commerce',       icon: <FaStore size={12} />             },
-  { label: 'Zapier',           icon: <SiZapier size={12} />            },
-  { label: 'Salesforce',       icon: <SiSalesforce size={12} />        },
-  { label: 'Content Creation', icon: <RiClapperboardFill size={12} />  },
-  { label: 'TikTok',           icon: <SiTiktok size={12} />            },
-  { label: 'Instagram',        icon: <SiInstagram size={12} />         },
-  { label: 'Clay',             icon: <FaBullseye size={12} />          },
-  { label: 'Apollo',           icon: <SiApollographql size={12} />     },
-  { label: 'ZoomInfo',         icon: <TbBrandZoom size={12} />         },
-  { label: 'Jira',             icon: <SiJira size={12} />              },
-  { label: 'Vercel',           icon: <SiVercel size={12} />            },
-  { label: 'OBS',              icon: <SiObsstudio size={12} />         },
-  { label: 'CapCut',           icon: <RiClapperboardFill size={12} />  },
-  { label: 'Discord',          icon: <SiDiscord size={12} />           },
-  { label: 'Stripe',           icon: <SiStripe size={12} />            },
-  { label: 'Shopify',          icon: <SiShopify size={12} />           },
-  { label: 'Mailchimp',        icon: <SiMailchimp size={12} />         },
-  { label: 'Claude',           icon: <SiAnthropic size={12} />         },
-  { label: 'SEMrush',          icon: <SiSemrush size={12} />           },
-  { label: 'Facebook',         icon: <SiFacebook size={12} />          },
-  { label: 'Microsoft',        icon: <RiMicrosoftFill size={12} />     },
-  { label: 'Attio',            icon: <FaDatabase size={12} />          },
-  { label: 'Slack',            icon: <SiSlack size={12} />             },
-  { label: 'Claude Code',      icon: <SiAnthropic size={12} />         },
-  { label: 'ChatGPT',          icon: <SiOpenai size={12} />            },
-  { label: 'Influencer Marketing', icon: <FaLayerGroup size={12} />     },
-  { label: 'Sales Funnels',    icon: <FaFunnelDollar size={12} />      },
-  { label: 'UI/UX',            icon: <FaPaintBrush size={12} />        },
-  { label: 'AI UGC',           icon: <FaRobot size={12} />             },
-];
 
 // Ripples active highlight across each pill on inView, then resets.
 function useSkillWave(count: number) {
@@ -425,22 +374,12 @@ export default function StoryUSF() {
                         }}
                       >
                         <span style={{ color: isLit ? GOLD : 'rgba(200,144,58,0.65)', display: 'flex', alignItems: 'center', flexShrink: 0, transition: 'color 0.18s ease' }}>
-                          {skill.icon}
+                          {skill.icon(12)}
                         </span>
                         {skill.label}
                       </span>
                     );
                   })}
-                  {/* Phantom spacers — force last row to left-align */}
-                  {Array.from({ length: 8 }).map((_, i) => (
-                    <span
-                      key={`spacer-${i}`}
-                      aria-hidden="true"
-                      style={{ padding: '0.35rem 0.65rem', fontSize: 'clamp(0.65rem,0.8vw,0.78rem)', visibility: 'hidden', pointerEvents: 'none', whiteSpace: 'nowrap' }}
-                    >
-                      placeholder
-                    </span>
-                  ))}
                 </div>
               </div>
 

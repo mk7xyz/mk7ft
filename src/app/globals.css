@@ -50,3 +50,47 @@
 
 /* Hide Next.js error overlay */
 nextjs-portal { display: none !important; }
+
+/* ─── Hover utilities ─────────────────────────────── */
+.hover-text-bright {
+  color: rgba(237,237,237,0.4);
+  transition: color 0.15s;
+}
+.hover-text-bright:hover { color: #ededed; }
+
+.hover-opacity {
+  transition: opacity 0.15s;
+}
+.hover-opacity:hover { opacity: 0.85; }
+
+.hover-contact-btn {
+  border-color: rgba(255,255,255,0.14);
+  color: rgba(237,237,237,0.55);
+  transition: border-color 0.15s, color 0.15s;
+}
+.hover-contact-btn:hover {
+  border-color: rgba(255,255,255,0.35);
+  color: #ededed;
+}
+
+.hover-partner-link {
+  color: rgba(237,237,237,0.22);
+  transition: color 0.15s;
+}
+.hover-partner-link:hover { color: rgba(237,237,237,0.7); }
+
+.hover-work-card {
+  background: #0e0e0e;
+  transition: background 0.15s;
+}
+.hover-work-card:hover { background: #141414; }
+
+.hover-skill-pill {
+  border-color: rgba(255,255,255,0.08);
+  color: rgba(237,237,237,0.38);
+  transition: border-color 0.12s, color 0.12s;
+}
+.hover-skill-pill:hover {
+  border-color: rgba(255,255,255,0.22);
+  color: rgba(237,237,237,0.75);
+}

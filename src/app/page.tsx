@@ -2,8 +2,6 @@ import GlobalBackground from "@/components/global-background";
 import Hero from "@/components/hero";
 import Work from "@/components/work";
 import Footer from "@/components/footer";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export default function Home() {
   return (
@@ -14,8 +12,6 @@ export default function Home() {
         <Work />
         <Footer />
       </main>
-      <Analytics />
-      <SpeedInsights />
     </>
   );
 }

@@ -40,16 +40,13 @@ export default function Hero() {
           href="https://linkedin.com/in/mk7ft"
           target="_blank"
           rel="noopener noreferrer"
+          className="hover-text-bright"
           style={{
             fontFamily: 'var(--font-display)',
             fontSize: '0.72rem',
             letterSpacing: '0.04em',
-            color: 'rgba(237,237,237,0.4)',
             textDecoration: 'none',
-            transition: 'color 0.15s',
           }}
-          onMouseEnter={e => (e.currentTarget.style.color = '#ededed')}
-          onMouseLeave={e => (e.currentTarget.style.color = 'rgba(237,237,237,0.4)')}
         >
           LinkedIn
         </a>
@@ -61,8 +58,8 @@ export default function Hero() {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        paddingTop: 'clamp(3rem,7vh,6rem)',
-        paddingBottom: 'clamp(3rem,7vh,6rem)',
+        paddingTop: 'clamp(1.5rem,4vh,3.5rem)',
+        paddingBottom: 'clamp(1.5rem,4vh,3.5rem)',
         maxWidth: '1100px',
         width: '100%',
         margin: '0 auto',
@@ -74,7 +71,7 @@ export default function Hero() {
           fontSize: '0.7rem',
           letterSpacing: '0.06em',
           color: 'rgba(237,237,237,0.35)',
-          marginBottom: 'clamp(1.5rem,3vh,2.5rem)',
+          marginBottom: 'clamp(1rem,2vh,1.8rem)',
         }}>
           gtm ops @ doublespeed.ai
         </p>
@@ -99,26 +96,36 @@ export default function Hero() {
           letterSpacing: '-0.04em',
           fontStyle: 'italic',
           color: 'rgba(237,237,237,0.55)',
-          marginBottom: 'clamp(2rem,4.5vh,4rem)',
+          marginBottom: 'clamp(1.5rem,3vh,2.5rem)',
         }}>
           Kamil.
         </h1>
 
         {/* Tagline */}
-        <p style={{
-          fontFamily: 'var(--font-display)',
-          fontWeight: 300,
-          fontSize: 'clamp(0.85rem,1.1vw,1rem)',
-          color: 'rgba(237,237,237,0.38)',
-          lineHeight: 1.85,
-          maxWidth: '480px',
-          marginBottom: 'clamp(2.5rem,5vh,4.5rem)',
-          letterSpacing: '0.01em',
+        <div style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '0.55rem',
+          marginBottom: 'clamp(1.8rem,3.5vh,3rem)',
         }}>
-          led extraordinary ventures at unreasonable ages in media and gaming.<br />
-          moved to the states and obsessively studied ai and content creation.<br />
-          now i run growth and product at venture-backed startups (a16z + yc).
-        </p>
+          {[
+            'led extraordinary ventures at unreasonable ages in media and gaming.',
+            'moved to the states and obsessively studied ai and content creation.',
+            'now i run growth and product at venture-backed startups (a16z + yc).',
+          ].map(line => (
+            <p key={line} style={{
+              fontFamily: 'var(--font-display)',
+              fontWeight: 300,
+              fontSize: 'clamp(0.85rem,1.1vw,1rem)',
+              color: 'rgba(237,237,237,0.38)',
+              lineHeight: 1.4,
+              letterSpacing: '0.01em',
+              margin: 0,
+            }}>
+              {line}
+            </p>
+          ))}
+        </div>
 
         {/* CTAs */}
         <div style={{ display: 'flex', gap: '0.85rem', flexWrap: 'wrap' }}>
@@ -126,6 +133,7 @@ export default function Hero() {
             href="https://drive.google.com/file/d/11iyZC-HZXZPrOEiP8cf4sAi-jgPyimob/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
+            className="hover-opacity"
             style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -139,10 +147,7 @@ export default function Hero() {
               fontWeight: 600,
               borderRadius: '4px',
               textDecoration: 'none',
-              transition: 'opacity 0.15s',
             }}
-            onMouseEnter={e => (e.currentTarget.style.opacity = '0.85')}
-            onMouseLeave={e => (e.currentTarget.style.opacity = '1')}
           >
             download résumé
             <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
@@ -152,27 +157,18 @@ export default function Hero() {
 
           <a
             href="#contact"
+            className="hover-contact-btn"
             style={{
               display: 'inline-flex',
               alignItems: 'center',
               gap: '0.5rem',
               padding: '0.75rem 1.75rem',
-              border: '1px solid rgba(255,255,255,0.14)',
-              color: 'rgba(237,237,237,0.55)',
+              border: '1px solid',
               fontFamily: 'var(--font-display)',
               fontSize: '0.72rem',
               letterSpacing: '0.04em',
               borderRadius: '4px',
               textDecoration: 'none',
-              transition: 'border-color 0.15s, color 0.15s',
-            }}
-            onMouseEnter={e => {
-              e.currentTarget.style.borderColor = 'rgba(255,255,255,0.35)';
-              e.currentTarget.style.color = '#ededed';
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.borderColor = 'rgba(255,255,255,0.14)';
-              e.currentTarget.style.color = 'rgba(237,237,237,0.55)';
             }}
           >
             book a call
@@ -211,17 +207,14 @@ export default function Hero() {
               href={p.url}
               target="_blank"
               rel="noopener noreferrer"
+              className="hover-partner-link"
               style={{
                 fontFamily: 'var(--font-display)',
                 fontSize: '0.68rem',
                 letterSpacing: '0.04em',
-                color: 'rgba(237,237,237,0.22)',
                 textDecoration: 'none',
-                transition: 'color 0.15s',
                 whiteSpace: 'nowrap',
               }}
-              onMouseEnter={e => (e.currentTarget.style.color = 'rgba(237,237,237,0.7)')}
-              onMouseLeave={e => (e.currentTarget.style.color = 'rgba(237,237,237,0.22)')}
             >
               {p.name}
             </a>
