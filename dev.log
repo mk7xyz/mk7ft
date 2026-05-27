@@ -244,3 +244,51 @@ https://nextjs.org/telemetry
  GET /?_cb=1779867499475 200 in 37ms
  GET /?_cb=1779867499475 200 in 143ms
  GET /?_cb=1779867537094 200 in 72ms
+ GET / 200 in 99ms
+ ✓ Compiled in 756ms (826 modules)
+ ⨯ TypeError: __webpack_modules__[moduleId] is not a function
+    at __webpack_exec__ (.next/server/app/page.js:334:39)
+    at <unknown> (.next/server/app/page.js:335:165)
+    at <unknown> (.next/server/app/page.js:335:47)
+    at Object.<anonymous> (.next/server/app/page.js:338:3) {
+  page: '/'
+}
+ ⨯ TypeError: __webpack_modules__[moduleId] is not a function
+    at __webpack_exec__ (.next/server/app/page.js:334:39)
+    at <unknown> (.next/server/app/page.js:335:165)
+    at <unknown> (.next/server/app/page.js:335:47)
+    at Object.<anonymous> (.next/server/app/page.js:338:3) {
+  page: '/'
+}
+ ✓ Compiled /_error in 123ms (905 modules)
+ GET /?_cb=1779867537094 500 in 557ms
+ GET / 500 in 424ms
+ ⨯ TypeError: __webpack_modules__[moduleId] is not a function
+    at __webpack_exec__ (.next/server/app/page.js:334:39)
+    at <unknown> (.next/server/app/page.js:335:165)
+    at <unknown> (.next/server/app/page.js:335:47)
+    at Object.<anonymous> (.next/server/app/page.js:338:3) {
+  page: '/'
+}
+ ⨯ TypeError: __webpack_modules__[moduleId] is not a function
+    at __webpack_exec__ (.next/server/app/page.js:334:39)
+    at <unknown> (.next/server/app/page.js:335:165)
+    at <unknown> (.next/server/app/page.js:335:47)
+    at Object.<anonymous> (.next/server/app/page.js:338:3) {
+  page: '/'
+}
+ GET /?_cb=1779867537094 500 in 337ms
+ GET / 500 in 278ms
+ ⚠ Cross origin request detected from 3001-3a08cf6d-6702-4069-82ca-78ad4bb3d25f.orchids.cloud to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+ ✓ Compiled in 521ms (919 modules)
+ GET /?_cb=1779867537094 200 in 189ms
+ ✓ Compiled in 204ms (397 modules)
+ GET /?_cb=1779867537094 200 in 46ms
+ ✓ Compiled in 314ms (919 modules)
+ GET /?_cb=1779867537094 200 in 39ms
+ ✓ Compiled in 305ms (921 modules)
+ GET /?_cb=1779867537094 200 in 68ms
+ GET / 200 in 101ms
+ GET / 200 in 80ms
+ GET /?_cb=1779867720730 200 in 75ms

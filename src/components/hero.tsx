@@ -1,5 +1,6 @@
 'use client';
 
+import ThemeToggle from './theme-toggle';
 
 const PAD = 'clamp(1.5rem,6vw,5rem)';
 const MAX = '1100px';
@@ -58,6 +59,7 @@ export default function Hero() {
             >
               LinkedIn
             </a>
+            <ThemeToggle />
           </div>
         </nav>
       </div>

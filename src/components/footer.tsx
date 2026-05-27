@@ -1,19 +1,36 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
+function initCal(theme: string) {
+  const container = document.getElementById('my-cal-inline-meet');
+  if (!container) return;
+  container.innerHTML = '';
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const Cal = (window as any).Cal;
+  if (!Cal?.ns?.meet) return;
+
+  Cal.ns.meet('inline', {
+    elementOrSelector: '#my-cal-inline-meet',
+    config: { layout: 'month_view', theme },
+    calLink: 'mk7ft/meet',
+  });
+  Cal.ns.meet('ui', { hideEventTypeDetails: false, layout: 'month_view' });
+}
 
 export default function Footer() {
-  const calLoaded = useRef(false);
+  const scriptLoaded = useRef(false);
+  const [calReady, setCalReady] = useState(false);
+  const [theme, setTheme] = useState('dark');
 
+  // Load cal.com script once
   useEffect(() => {
-    if (calLoaded.current) return;
-    calLoaded.current = true;
+    if (scriptLoaded.current) return;
+    scriptLoaded.current = true;
 
-    const preload = document.createElement('link');
-    preload.rel = 'preload';
-    preload.as = 'script';
-    preload.href = 'https://app.cal.com/embed/embed.js';
-    document.head.appendChild(preload);
+    const initial = document.documentElement.getAttribute('data-theme') || 'dark';
+    setTheme(initial);
 
     const script = document.createElement('script');
     script.type = 'text/javascript';
@@ -22,11 +39,9 @@ export default function Footer() {
         let p = function (a, ar) { a.q.push(ar); };
         let d = C.document;
         C.Cal = C.Cal || function () {
-          let cal = C.Cal;
-          let ar = arguments;
+          let cal = C.Cal; let ar = arguments;
           if (!cal.loaded) {
-            cal.ns = {};
-            cal.q = cal.q || [];
+            cal.ns = {}; cal.q = cal.q || [];
             d.head.appendChild(d.createElement("script")).src = A;
             cal.loaded = true;
           }
@@ -45,18 +60,43 @@ export default function Footer() {
         };
       })(window, "https://app.cal.com/embed/embed.js", "init");
       Cal("init", "meet", {origin:"https://app.cal.com"});
-      Cal.ns.meet("inline", {
-        elementOrSelector: "#my-cal-inline-meet",
-        config: {"layout":"month_view","theme":"dark"},
-        calLink: "mk7ft/meet",
-      });
-      Cal.ns.meet("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
     `;
+    script.onload = () => setCalReady(true);
     document.head.appendChild(script);
+
+    // Cal embed.js loads async — poll until ready
+    const interval = setInterval(() => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      if ((window as any).Cal?.ns?.meet) {
+        clearInterval(interval);
+        setCalReady(true);
+      }
+    }, 100);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // Re-init cal whenever theme changes (or when script first becomes ready)
+  useEffect(() => {
+    if (!calReady) return;
+    initCal(theme);
+  }, [calReady, theme]);
+
+  // Watch data-theme attribute for changes
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      const t = document.documentElement.getAttribute('data-theme') || 'dark';
+      setTheme(t);
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['data-theme'],
+    });
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <section id="contact" style={{ background: 'var(--bg)' }}>
+    <section id="contact" style={{ background: 'var(--bg)', transition: 'background 0.25s ease' }}>
       <div style={{ height: '1px', background: 'var(--divider)' }} />
 
       <div style={{
