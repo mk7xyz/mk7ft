@@ -1,5 +1,5 @@
 import {
-  SiPython, SiGithub, SiFigma, SiAdobephotoshop, SiGooglecloud, SiNotion,
+  SiPython, SiGithub, SiFigma, SiGooglecloud, SiNotion,
   SiCanva, SiHubspot, SiGoogleads, SiMeta, SiZapier, SiSalesforce, SiTiktok,
   SiInstagram, SiJira, SiVercel, SiObsstudio, SiDiscord, SiStripe, SiShopify,
   SiMailchimp, SiAnthropic, SiSemrush, SiApollographql, SiFacebook, SiSlack, SiOpenai,
@@ -15,7 +15,7 @@ export const SKILLS: Skill[] = [
   { label: 'Python',               icon: (s) => <SiPython size={s} />            },
   { label: 'Prompt Eng.',          icon: (s) => <FaRobot size={s} />             },
   { label: 'Figma',                icon: (s) => <SiFigma size={s} />             },
-  { label: 'Photoshop',            icon: (s) => <SiAdobephotoshop size={s} />    },
+  { label: 'Photoshop',            icon: (s) => <FaPaintBrush size={s} />        },
   { label: 'GitHub',               icon: (s) => <SiGithub size={s} />            },
   { label: 'Google Cloud',         icon: (s) => <SiGooglecloud size={s} />       },
   { label: 'Notion',               icon: (s) => <SiNotion size={s} />            },
