@@ -1,5 +1,8 @@
 'use client';
 
+const PAD = 'clamp(1.5rem,6vw,5rem)';
+const MAX = '1100px';
+
 const PARTNERS = [
   { name: 'Forbes',           url: 'https://forbes.com'          },
   { name: 'ESPN',             url: 'https://espn.com'            },
@@ -14,55 +17,56 @@ export default function Hero() {
         minHeight: '100dvh',
         display: 'flex',
         flexDirection: 'column',
-        padding: '0 clamp(1.5rem,6vw,5rem)',
         background: '#0a0a0a',
       }}
     >
-      {/* Nav */}
-      <nav style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        padding: 'clamp(1.4rem,3vh,2.2rem) 0',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
-      }}>
-        <span style={{
-          fontFamily: 'var(--font-editorial)',
-          fontStyle: 'italic',
-          fontWeight: 300,
-          fontSize: 'clamp(1rem,1.4vw,1.25rem)',
-          color: '#ededed',
-          letterSpacing: '-0.01em',
+      {/* Nav — border spans full width, content constrained */}
+      <div style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+        <nav style={{
+          maxWidth: MAX,
+          margin: '0 auto',
+          padding: `clamp(1.4rem,3vh,2.2rem) ${PAD}`,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
         }}>
-          MK7
-        </span>
-        <a
-          href="https://linkedin.com/in/mk7ft"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover-text-bright"
-          style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: '0.72rem',
-            letterSpacing: '0.04em',
-            textDecoration: 'none',
-          }}
-        >
-          LinkedIn
-        </a>
-      </nav>
+          <span style={{
+            fontFamily: 'var(--font-editorial)',
+            fontStyle: 'italic',
+            fontWeight: 300,
+            fontSize: 'clamp(1rem,1.4vw,1.25rem)',
+            color: 'var(--green)',
+            letterSpacing: '-0.01em',
+          }}>
+            MK7
+          </span>
+          <a
+            href="https://linkedin.com/in/mk7ft"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover-text-bright"
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: '0.72rem',
+              letterSpacing: '0.04em',
+              textDecoration: 'none',
+            }}
+          >
+            LinkedIn
+          </a>
+        </nav>
+      </div>
 
-      {/* Main */}
+      {/* Main — same maxWidth + PAD as every other section */}
       <div style={{
         flex: 1,
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        paddingTop: 'clamp(1.5rem,4vh,3.5rem)',
-        paddingBottom: 'clamp(1.5rem,4vh,3.5rem)',
-        maxWidth: '1100px',
+        maxWidth: MAX,
         width: '100%',
         margin: '0 auto',
+        padding: `clamp(1.5rem,4vh,3.5rem) ${PAD}`,
       }}>
 
         {/* Role */}
@@ -148,7 +152,7 @@ export default function Hero() {
               alignItems: 'center',
               gap: '0.5rem',
               padding: '0.75rem 1.75rem',
-              background: '#ededed',
+              background: 'var(--green)',
               color: '#0a0a0a',
               fontFamily: 'var(--font-display)',
               fontSize: '0.72rem',
@@ -188,46 +192,46 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Partners */}
-      <div style={{
-        borderTop: '1px solid rgba(255,255,255,0.06)',
-        padding: 'clamp(1.2rem,2.5vh,2rem) 0',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        flexWrap: 'wrap',
-        gap: '1rem',
-        maxWidth: '1100px',
-        width: '100%',
-        margin: '0 auto',
-      }}>
-        <span style={{
-          fontFamily: 'var(--font-display)',
-          fontSize: '0.6rem',
-          letterSpacing: '0.06em',
-          color: 'rgba(237,237,237,0.2)',
+      {/* Partners — border spans full width, content constrained */}
+      <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+        <div style={{
+          maxWidth: MAX,
+          margin: '0 auto',
+          padding: `clamp(1.2rem,2.5vh,2rem) ${PAD}`,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          gap: '1rem',
         }}>
-          as seen in
-        </span>
-        <div style={{ display: 'flex', gap: 'clamp(1.5rem,4vw,3.5rem)', flexWrap: 'wrap', alignItems: 'center' }}>
-          {PARTNERS.map(p => (
-            <a
-              key={p.name}
-              href={p.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover-partner-link"
-              style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: '0.68rem',
-                letterSpacing: '0.04em',
-                textDecoration: 'none',
-                whiteSpace: 'nowrap',
-              }}
-            >
-              {p.name}
-            </a>
-          ))}
+          <span style={{
+            fontFamily: 'var(--font-display)',
+            fontSize: '0.6rem',
+            letterSpacing: '0.06em',
+            color: 'rgba(237,237,237,0.2)',
+          }}>
+            as seen in
+          </span>
+          <div style={{ display: 'flex', gap: 'clamp(1.5rem,4vw,3.5rem)', flexWrap: 'wrap', alignItems: 'center' }}>
+            {PARTNERS.map(p => (
+              <a
+                key={p.name}
+                href={p.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover-partner-link"
+                style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: '0.68rem',
+                  letterSpacing: '0.04em',
+                  textDecoration: 'none',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                {p.name}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>

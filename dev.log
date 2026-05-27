@@ -5,53 +5,14 @@
    ▲ Next.js 15.5.9
    - Local:        http://localhost:3001
    - Network:      http://172.20.0.51:3001
-   - Experiments (use with caution):
-     · optimizePackageImports
 
  ✓ Starting...
- ✓ Ready in 1287ms
- ○ Compiling / ...
- ✓ Compiled / in 8.6s (644 modules)
- GET / 200 in 9551ms
- GET /?_cb=1779864587710 200 in 105ms
- GET / 200 in 133ms
- ✓ Compiled /favicon.ico in 262ms (385 modules)
- GET /favicon.ico 200 in 348ms
- GET /?_cb=1779864944508 200 in 610ms
- ✓ Compiled in 277ms (258 modules)
- GET /?_cb=1779864944508 200 in 42ms
- ✓ Compiled in 196ms (258 modules)
- GET /?_cb=1779864944508 200 in 37ms
- ✓ Compiled in 433ms (626 modules)
- GET /?_cb=1779864944508 200 in 153ms
- ⚠ Fast Refresh had to perform a full reload due to a runtime error.
- ⨯ ReferenceError: SiAdobephotoshop is not defined
-    at Object.icon (src/lib/skills.tsx:18:50)
-    at eval (src/components/work.tsx:180:18)
-    at Array.map (<anonymous>)
-    at Work (src/components/work.tsx:163:19)
-  16 |   { label: 'Prompt Eng.',          icon: (s) => <FaRobot size={s} />             },
-  17 |   { label: 'Figma',                icon: (s) => <SiFigma size={s} />             },
-> 18 |   { label: 'Photoshop',            icon: (s) => <SiAdobephotoshop size={s} />    },
-     |                                                  ^
-  19 |   { label: 'GitHub',               icon: (s) => <SiGithub size={s} />            },
-  20 |   { label: 'Google Cloud',         icon: (s) => <SiGooglecloud size={s} />       },
-  21 |   { label: 'Notion',               icon: (s) => <SiNotion size={s} />            }, {
-  digest: '3639882936'
-}
- GET /?_cb=1779864944508 500 in 588ms
- ⚠ Cross origin request detected from 3001-3a08cf6d-6702-4069-82ca-78ad4bb3d25f.orchids.cloud to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
-Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
- ✓ Compiled in 296ms (626 modules)
- GET /?_cb=1779864944508 200 in 494ms
- ⚠ Fast Refresh had to perform a full reload due to a runtime error.
- ⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
-   ▲ Next.js 15.5.9
-   - Local:        http://localhost:3001
-   - Network:      http://172.20.0.51:3001
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
 
- ✓ Starting...
- ✓ Ready in 1104ms
+ ✓ Ready in 1165ms
  ○ Compiling / ...
  ✓ Compiled / in 9.2s (644 modules)
- GET /?_cb=1779865106715 200 in 10155ms
+ GET /?_cb=1779866273426 200 in 10198ms

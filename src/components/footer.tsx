@@ -74,7 +74,7 @@ export default function Footer() {
             fontSize: 'clamp(2.4rem,5vw,5.5rem)',
             lineHeight: 0.88,
             letterSpacing: '-0.04em',
-            color: '#ededed',
+            color: 'var(--green)',
           }}>
             building?
           </h2>

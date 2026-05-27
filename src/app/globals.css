@@ -15,6 +15,9 @@
   --background: #0a0a0a;
   --foreground: #ededed;
   --border: rgba(255,255,255,0.08);
+  --green: #5a8f6a;
+  --green-dim: rgba(90,143,106,0.45);
+  --green-faint: rgba(90,143,106,0.12);
 }
 
 @layer base {
@@ -38,7 +41,7 @@
   }
 
   ::selection {
-    background: rgba(255,255,255,0.15);
+    background: var(--green-dim);
     color: #ededed;
   }
 }
@@ -46,7 +49,7 @@
 /* ─── Scrollbar ──────────────────────────────────── */
 ::-webkit-scrollbar { width: 2px; }
 ::-webkit-scrollbar-track { background: #0a0a0a; }
-::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 99px; }
+::-webkit-scrollbar-thumb { background: var(--green-dim); border-radius: 99px; }
 
 /* Hide Next.js error overlay */
 nextjs-portal { display: none !important; }
@@ -56,7 +59,7 @@ nextjs-portal { display: none !important; }
   color: rgba(237,237,237,0.4);
   transition: color 0.15s;
 }
-.hover-text-bright:hover { color: #ededed; }
+.hover-text-bright:hover { color: var(--green); }
 
 .hover-opacity {
   transition: opacity 0.15s;
@@ -69,21 +72,21 @@ nextjs-portal { display: none !important; }
   transition: border-color 0.15s, color 0.15s;
 }
 .hover-contact-btn:hover {
-  border-color: rgba(255,255,255,0.35);
-  color: #ededed;
+  border-color: var(--green-dim);
+  color: var(--green);
 }
 
 .hover-partner-link {
   color: rgba(237,237,237,0.22);
   transition: color 0.15s;
 }
-.hover-partner-link:hover { color: rgba(237,237,237,0.7); }
+.hover-partner-link:hover { color: var(--green); }
 
 .hover-work-card {
   background: #0e0e0e;
   transition: background 0.15s;
 }
-.hover-work-card:hover { background: #141414; }
+.hover-work-card:hover { background: #0f1510; }
 
 .hover-skill-pill {
   border-color: rgba(255,255,255,0.08);
@@ -91,8 +94,8 @@ nextjs-portal { display: none !important; }
   transition: border-color 0.12s, color 0.12s;
 }
 .hover-skill-pill:hover {
-  border-color: rgba(255,255,255,0.22);
-  color: rgba(237,237,237,0.75);
+  border-color: var(--green-dim);
+  color: var(--green);
 }
 
 /* ─── Footer contact grid ─────────────────────────── */
