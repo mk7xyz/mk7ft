@@ -94,3 +94,10 @@ nextjs-portal { display: none !important; }
   border-color: rgba(255,255,255,0.22);
   color: rgba(237,237,237,0.75);
 }
+
+/* ─── Footer contact grid ─────────────────────────── */
+@media (max-width: 680px) {
+  #contact > div:first-of-type {
+    grid-template-columns: 1fr !important;
+  }
+}

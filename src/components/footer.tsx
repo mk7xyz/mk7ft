@@ -48,7 +48,7 @@ export default function Footer() {
       Cal("init", "meet", {origin:"https://app.cal.com"});
       Cal.ns.meet("inline", {
         elementOrSelector: "#my-cal-inline-meet",
-        config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"auto"},
+        config: {"layout":"month_view","theme":"dark"},
         calLink: "mk7ft/meet",
       });
       Cal.ns.meet("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
@@ -64,36 +64,43 @@ export default function Footer() {
         maxWidth: '1100px',
         margin: '0 auto',
         padding: 'clamp(3rem,6vh,5rem) clamp(1.5rem,6vw,5rem)',
+        display: 'grid',
+        gridTemplateColumns: '1fr 1.4fr',
+        gap: 'clamp(2rem,4vw,4rem)',
+        alignItems: 'start',
       }}>
 
-        <h2 style={{
-          fontFamily: 'var(--font-editorial)',
-          fontWeight: 300,
-          fontSize: 'clamp(3rem,8vw,8.5rem)',
-          lineHeight: 0.88,
-          letterSpacing: '-0.04em',
-          color: '#ededed',
-          marginBottom: '0.06em',
-        }}>
-          building?
-        </h2>
-        <h2 style={{
-          fontFamily: 'var(--font-editorial)',
-          fontWeight: 300,
-          fontSize: 'clamp(3rem,8vw,8.5rem)',
-          lineHeight: 0.88,
-          letterSpacing: '-0.04em',
-          fontStyle: 'italic',
-          color: 'rgba(237,237,237,0.4)',
-          marginBottom: 'clamp(2rem,4vh,3.5rem)',
-        }}>
-          let&apos;s chat.
-        </h2>
+        {/* Left — headline */}
+        <div style={{ paddingTop: '0.5rem' }}>
+          <h2 style={{
+            fontFamily: 'var(--font-editorial)',
+            fontWeight: 300,
+            fontSize: 'clamp(2.4rem,5vw,5.5rem)',
+            lineHeight: 0.88,
+            letterSpacing: '-0.04em',
+            color: '#ededed',
+            marginBottom: '0.06em',
+          }}>
+            building?
+          </h2>
+          <h2 style={{
+            fontFamily: 'var(--font-editorial)',
+            fontWeight: 300,
+            fontSize: 'clamp(2.4rem,5vw,5.5rem)',
+            lineHeight: 0.88,
+            letterSpacing: '-0.04em',
+            fontStyle: 'italic',
+            color: 'rgba(237,237,237,0.4)',
+            marginBottom: 'clamp(1.5rem,3vh,2.5rem)',
+          }}>
+            let&apos;s chat.
+          </h2>
+        </div>
 
-        {/* Cal.com inline embed */}
+        {/* Right — Cal.com inline embed */}
         <div
           id="my-cal-inline-meet"
-          style={{ width: '100%', height: '700px', overflow: 'scroll' }}
+          style={{ width: '100%', height: '520px', overflow: 'hidden' }}
         />
       </div>
 
