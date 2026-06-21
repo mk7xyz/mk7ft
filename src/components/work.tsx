@@ -31,10 +31,31 @@ const COMPANIES = [
   },
 ];
 
-const STATS = [
-  { n: '17M+', label: 'visitors served',   sub: 'saudi red crescent - emt and translator ops' },
-  { n: '#1',   label: 'of 40 sales reps',  sub: 'vivint - $150k+ closed in 90 days'           },
-  { n: '50k+', label: 'customers managed', sub: 'aker & bekdash - $3M+ revenue managed'   },
+const STATS: {
+  n: string;
+  label: string;
+  sub: { text: string; url?: string }[];
+}[] = [
+  { n: '17M+', label: 'visitors served',   sub: [
+    { text: 'saudi red crescent', url: 'https://en.wikipedia.org/wiki/Saudi_Red_Crescent_Authority' },
+    { text: ' - emt and translator ops' },
+  ]},
+  { n: '$150K+', label: 'closed <70 days',  sub: [
+    { text: 'vivint', url: 'https://vivint.com' },
+    { text: ' - #1 of 40 sales reps' },
+  ]},
+  { n: '50k+', label: 'customers managed', sub: [
+    { text: 'aker', url: 'https://akersweetsusa.com' },
+    { text: ' & ' },
+    { text: 'bekdash', url: 'https://bekdash.us' },
+    { text: ' - $3M+ revenue managed' },
+  ]},
+];
+
+const WORK_STATS = [
+  { n: '30M+', label: 'impressions generated',   sub: 'across all social media campaigns' },
+  { n: '$100K+', label: 'raised',                sub: 'raised in sponsorships and partnerships.' },
+  { n: '250k+', label: 'community',              sub: 'built and managed organically from scratch' },
 ];
 
 const PAD = 'clamp(1.5rem,6vw,5rem)';
@@ -118,10 +139,10 @@ export default function Work() {
           ))}
         </div>
 
-        {/* Stats row */}
-        <div className="stats-grid" style={{ display: 'grid', gap: 'clamp(1rem,3vw,2.5rem)' }}>
-          {STATS.map((s) => (
-            <div key={s.n} style={{ borderTop: '1px solid var(--divider-8)', paddingTop: 'clamp(1rem,2vh,1.5rem)' }}>
+        {/* Work stats row */}
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0 clamp(1rem,3vw,2.5rem)', marginBottom: 'clamp(2.5rem,5vh,4rem)' }}>
+          {WORK_STATS.map((s) => (
+            <div key={s.n} style={{ paddingTop: 'clamp(1rem,2vh,1.5rem)' }}>
               <div style={{
                 fontFamily: 'var(--font-editorial)',
                 fontSize: 'clamp(2rem,4.5vw,4rem)',
@@ -139,6 +160,51 @@ export default function Work() {
               </div>
               <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.72rem', color: 'var(--text-40)', letterSpacing: '0.01em', lineHeight: 1.5 }}>
                 {s.sub}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Stats row */}
+        <div className="stats-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0 clamp(1rem,3vw,2.5rem)' }}>
+          <span style={{
+            fontFamily: 'var(--font-display)',
+            fontSize: '0.72rem',
+            letterSpacing: '0.06em',
+            color: 'var(--text-25)',
+            display: 'block',
+            gridColumn: '1 / -1',
+            marginBottom: 'clamp(1.4rem,2.5vh,2.2rem)',
+          }}>
+            side quests
+          </span>
+          {STATS.map((s) => (
+            <div key={s.n} style={{ paddingTop: 'clamp(1rem,2vh,1.5rem)' }}>
+              <div style={{
+                fontFamily: 'var(--font-editorial)',
+                fontSize: 'clamp(2rem,4.5vw,4rem)',
+                fontWeight: 300,
+                fontStyle: 'italic',
+                color: 'var(--green)',
+                lineHeight: 0.9,
+                letterSpacing: '-0.03em',
+                marginBottom: '0.6rem',
+              }}>
+                {s.n}
+              </div>
+              <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.82rem', color: 'var(--text-60)', fontWeight: 500, letterSpacing: '0.02em', marginBottom: '0.25rem' }}>
+                {s.label}
+              </div>
+              <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.72rem', color: 'var(--text-40)', letterSpacing: '0.01em', lineHeight: 1.5 }}>
+                {s.sub.map((part, i) =>
+                  part.url ? (
+                    <a key={i} href={part.url} target="_blank" rel="noopener noreferrer" className="hover-sub-link" style={{ textDecoration: 'none' }}>
+                      {part.text}
+                    </a>
+                  ) : (
+                    <span key={i}>{part.text}</span>
+                  )
+                )}
               </div>
             </div>
           ))}

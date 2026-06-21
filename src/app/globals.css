@@ -160,6 +160,11 @@ nextjs-portal { display: none !important; }
 }
 .hover-skill-pill:hover {
   border-color: var(--green-dim);
+
+.hover-sub-link {
+  transition: color 0.15s;
+}
+.hover-sub-link:hover { color: var(--green); }
   color: var(--green);
 }
 
