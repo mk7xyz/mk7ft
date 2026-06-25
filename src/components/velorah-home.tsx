@@ -9,7 +9,7 @@ const RESUME =
   'https://drive.google.com/file/d/11iyZC-HZXZPrOEiP8cf4sAi-jgPyimob/view?usp=sharing';
 
 const COMPANIES = [
-  { name: 'doublespeed.ai', role: 'gtm ops', desc: 'ai content and intelligence automation.', tag: 'current', url: 'https://doublespeed.ai' },
+  { name: 'doublespeed.ai', role: 'gtm ops', desc: 'ai content and intelligence automation.', tag: 'prev', url: 'https://doublespeed.ai' },
   { name: 'sprk', role: 'advisor', desc: 'ai edtech and learning software.', tag: 'active', url: 'https://sprk.co' },
   { name: 'aster', role: 'advisor', desc: "ai women's health and wellness app.", tag: 'active', url: 'https://aster.fit' },
   { name: 'dart', role: 'advisor', desc: 'ai automation and consulting agency.', tag: 'active', url: 'https://dart.ceo' },
@@ -113,7 +113,6 @@ export default function VelorahHome() {
         <main>
           <aside className="identity r1">
             <div>
-              <p className="eyebrow lc">current: <b>gtm @ doublespeed</b></p>
               <h1>Muhammad<br /><em>Kamil.</em></h1>
               <div className="bio lc">
                 <p>led extraordinary ventures at unreasonable ages in media and gaming.</p>
