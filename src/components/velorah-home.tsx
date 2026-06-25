@@ -142,8 +142,9 @@ export default function VelorahHome() {
 
         <footer className="r3">
           <div className="meta">
+            <a className="lc" href="mailto:muhammadkamilali@gmail.com">say hi ↗</a>
             <span className="lc">tampa, fl</span>
-            <span className="lc">© 2026 muhammad kamil</span>
+            <span className="lc">© 2026</span>
           </div>
           <div className="seen">
             <span className="l">as seen in</span>
