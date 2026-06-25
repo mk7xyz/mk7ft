@@ -119,7 +119,11 @@ export default function VelorahHome() {
             <div>
               <p className="eyebrow lc">current: <b>gtm @ doublespeed</b></p>
               <h1>Muhammad<br /><em>Kamil.</em></h1>
-              <p className="bio lc">led extraordinary ventures at unreasonable ages in media and gaming. studied ai obsessively, and now run growth and product at venture-backed startups (a16z + yc).</p>
+              <div className="bio lc">
+                <p>led extraordinary ventures at unreasonable ages in media and gaming.</p>
+                <p>moved to the states and obsessively studied ai and content creation.</p>
+                <p>now i run growth and product at venture-backed startups (a16z + yc).</p>
+              </div>
             </div>
             <div>
               <p className="chat lc">building? <em>let&apos;s chat.</em></p>
