@@ -73,7 +73,7 @@ export default function VelorahHome() {
         <nav className="r1">
           <a className="logo" href="https://mk7ft.com">MK<sub>7</sub></a>
           <div className="nav-r">
-            <a href="https://linkedin.com/in/mk7ft" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://linkedin.com/in/mk7ft" target="_blank" rel="noopener noreferrer">LinkedIn<span className="li-note">11k+ followers</span></a>
           </div>
         </nav>
 

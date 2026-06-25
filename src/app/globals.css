@@ -209,6 +209,7 @@ nextjs-portal { display: none !important; }
 .velorah .nav-r{display:flex;align-items:center;gap:clamp(1rem,1.8vw,1.6rem)}
 .velorah .nav-r a{font-size:0.8rem;color:var(--soft);text-decoration:none;transition:color .15s}
 .velorah .nav-r a:hover{color:var(--fg)}
+.velorah .li-note{margin-left:.45rem;font-size:0.6rem;letter-spacing:0.06em;color:var(--faint);vertical-align:.05em}
 .velorah .pill{display:inline-flex;align-items:center;gap:.4rem;border-radius:999px;padding:.55rem 1.2rem;font-size:0.74rem;color:var(--fg);cursor:pointer;border:none}
 
 .velorah main{flex:1;min-height:0;display:grid;grid-template-columns:1.05fr 2.4fr;gap:clamp(1rem,2.6vw,2.6rem)}
