@@ -44,8 +44,8 @@ const MEDIA = [
 ];
 
 const CAL_ATTRS = {
-  'data-cal-namespace': 'meet',
-  'data-cal-link': 'mk7ft/meet',
+  'data-cal-namespace': '20',
+  'data-cal-link': 'mk7ft/20',
   'data-cal-config': '{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"dark"}',
 };
 
@@ -62,27 +62,18 @@ export default function VelorahHome() {
     return () => v.removeEventListener('loadedmetadata', set);
   }, []);
 
-  // Cal.com — floating "book a call" button (dark popup). The inline
-  // book-a-call buttons share the "meet" namespace, so they open it too.
+  // Cal.com — element-click popup (dark). The "book a call" buttons carry
+  // data-cal attributes for the "20" namespace and open it on click.
   useEffect(() => {
-    if ((window as any).__calMeetInit) return;
-    (window as any).__calMeetInit = true;
+    if ((window as any).__cal20Init) return;
+    (window as any).__cal20Init = true;
     /* eslint-disable */
     (function (C: any, A: string, L: string) { let p = function (a: any, ar: any) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement('script')).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === 'string') { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ['initNamespace', namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, 'https://app.cal.com/embed/embed.js', 'init');
     const Cal = (window as any).Cal;
-    Cal('init', 'meet', { origin: 'https://app.cal.com' });
+    Cal('init', '20', { origin: 'https://app.cal.com' });
     Cal.config = Cal.config || {};
     Cal.config.forwardQueryParams = true;
-    Cal.ns.meet('floatingButton', {
-      calLink: 'mk7ft/meet',
-      config: { layout: 'month_view', useSlotsViewOnSmallScreen: 'true', theme: 'dark' },
-      buttonText: 'book a call',
-      buttonColor: '#ffffff',
-      buttonTextColor: '#0a1118',
-      hideButtonIcon: false,
-      buttonPosition: 'bottom-right',
-    });
-    Cal.ns.meet('ui', { hideEventTypeDetails: false, layout: 'month_view', theme: 'dark' });
+    Cal.ns['20']('ui', { hideEventTypeDetails: false, layout: 'month_view', theme: 'dark' });
     /* eslint-enable */
   }, []);
 
@@ -106,7 +97,6 @@ export default function VelorahHome() {
           <a className="logo" href="https://mk7ft.com">MK<sub>7</sub></a>
           <div className="nav-r">
             <a href="https://linkedin.com/in/mk7ft" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href={RESUME} target="_blank" rel="noopener noreferrer">résumé</a>
           </div>
         </nav>
 
@@ -123,8 +113,8 @@ export default function VelorahHome() {
             <div>
               <p className="chat lc">building? <em>let&apos;s chat.</em></p>
               <div className="cta">
-                <a className="btn btn-primary" href={RESUME} target="_blank" rel="noopener noreferrer">download résumé ↓</a>
-                <button className="btn btn-ghost" {...CAL_ATTRS}>book a call ↗</button>
+                <button className="btn btn-primary" {...CAL_ATTRS}>book a call ↗</button>
+                <a className="btn btn-ghost" href={RESUME} target="_blank" rel="noopener noreferrer">download résumé ↓</a>
               </div>
             </div>
           </aside>
@@ -177,15 +167,15 @@ export default function VelorahHome() {
         </main>
 
         <footer className="r3">
+          <div className="meta">
+            <span className="lc">tampa, fl</span>
+            <span className="lc">© 2026 muhammad kamil</span>
+          </div>
           <div className="seen">
             <span className="l">as seen in</span>
             {MEDIA.map((m) => (
               <a key={m.name} href={m.url} target="_blank" rel="noopener noreferrer">{m.name}</a>
             ))}
-          </div>
-          <div className="meta">
-            <span className="lc">tampa, fl</span>
-            <span className="lc">© 2026 muhammad kamil</span>
           </div>
         </footer>
       </div>
