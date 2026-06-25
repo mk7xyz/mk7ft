@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 
-const VIDEO_SRC = '/bg.mp4';
+const BG_IMAGE = '/office.jpg';
 
 const RESUME =
   'https://drive.google.com/file/d/11iyZC-HZXZPrOEiP8cf4sAi-jgPyimob/view?usp=sharing';
@@ -49,18 +49,6 @@ const CAL_ATTRS = {
 };
 
 export default function VelorahHome() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  // Calm the background motion a touch
-  useEffect(() => {
-    const v = videoRef.current;
-    if (!v) return;
-    const set = () => { v.playbackRate = 0.25; };
-    set();
-    v.addEventListener('loadedmetadata', set);
-    return () => v.removeEventListener('loadedmetadata', set);
-  }, []);
-
   // Cal.com — element-click popup (dark). The "book a call" buttons carry
   // data-cal attributes for the "20" namespace and open it on click.
   useEffect(() => {
@@ -78,17 +66,7 @@ export default function VelorahHome() {
 
   return (
     <div className="velorah">
-      <video
-        ref={videoRef}
-        className="bg-video"
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
-        poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='9'%3E%3Crect width='100%25' height='100%25' fill='%2306121a'/%3E%3C/svg%3E"
-        src={VIDEO_SRC}
-      />
+      <img className="bg-image" src={BG_IMAGE} alt="" aria-hidden="true" />
       <div className="scrim" />
 
       <div className="shell">

@@ -184,7 +184,9 @@ nextjs-portal { display: none !important; }
 }
 .velorah .lc{text-transform:lowercase}
 
-.velorah .bg-video{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.velorah .bg-image{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;
+  transform-origin:center;animation:velorah-kenburns 44s ease-in-out infinite alternate;will-change:transform}
+@keyframes velorah-kenburns{0%{transform:scale(1.06) translate(0%,0%)}100%{transform:scale(1.16) translate(-1.5%,-1.4%)}}
 .velorah .scrim{position:fixed;inset:0;z-index:1;pointer-events:none;
   background:
     linear-gradient(90deg,rgba(3,13,20,0.9) 0%,rgba(3,13,20,0.42) 28%,rgba(3,13,20,0.16) 56%,rgba(3,13,20,0.34) 100%),
@@ -302,4 +304,5 @@ nextjs-portal { display: none !important; }
 }
 @media (prefers-reduced-motion:reduce){
   .velorah .r1,.velorah .r2,.velorah .r3{animation:none}
+  .velorah .bg-image{animation:none;transform:scale(1.06)}
 }
