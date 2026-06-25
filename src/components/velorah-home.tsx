@@ -80,8 +80,7 @@ export default function VelorahHome() {
         <main>
           <aside className="identity r1">
             <div>
-              <h1>Muhammad<br /><em>Kamil.</em></h1>
-              <p className="tagline lc">growth &amp; product for ai-native startups.</p>
+              <h1>Muhammad<br /><em>Kamil</em></h1>
             </div>
             <div className="bio lc">
               <p>led extraordinary ventures at unreasonable ages in media and gaming.</p>
