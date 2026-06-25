@@ -81,18 +81,16 @@ export default function VelorahHome() {
           <aside className="identity r1">
             <div>
               <h1>Muhammad<br /><em>Kamil.</em></h1>
-              <div className="bio lc">
-                <p>led extraordinary ventures at unreasonable ages in media and gaming.</p>
-                <p>moved to the states and obsessively studied ai and content creation.</p>
-                <p>now i run growth and product at venture-backed startups (a16z + yc).</p>
-              </div>
+              <p className="tagline lc">growth &amp; product for ai-native startups.</p>
             </div>
-            <div>
-              <p className="chat lc">building? <em>let&apos;s chat.</em></p>
-              <div className="cta">
-                <a className="btn btn-ghost" href={RESUME} target="_blank" rel="noopener noreferrer">download résumé ↓</a>
-                <button className="btn btn-primary" {...CAL_ATTRS}>book a call ↗</button>
-              </div>
+            <div className="bio lc">
+              <p>led extraordinary ventures at unreasonable ages in media and gaming.</p>
+              <p>moved to the states and obsessively studied ai and content creation.</p>
+              <p>now i run growth and product at venture-backed startups (a16z + yc).</p>
+            </div>
+            <div className="cta">
+              <a className="btn btn-ghost" href={RESUME} target="_blank" rel="noopener noreferrer">download résumé ↓</a>
+              <button className="btn btn-primary" {...CAL_ATTRS}>book a call ↗</button>
             </div>
           </aside>
 
