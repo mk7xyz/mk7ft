@@ -113,8 +113,8 @@ export default function VelorahHome() {
             <div>
               <p className="chat lc">building? <em>let&apos;s chat.</em></p>
               <div className="cta">
-                <button className="btn btn-primary" {...CAL_ATTRS}>book a call ↗</button>
                 <a className="btn btn-ghost" href={RESUME} target="_blank" rel="noopener noreferrer">download résumé ↓</a>
+                <button className="btn btn-primary" {...CAL_ATTRS}>book a call ↗</button>
               </div>
             </div>
           </aside>
