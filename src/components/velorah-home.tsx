@@ -2,8 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 
-const VIDEO_SRC =
-  'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4';
+const VIDEO_SRC = '/bg.mp4';
 
 const RESUME =
   'https://drive.google.com/file/d/11iyZC-HZXZPrOEiP8cf4sAi-jgPyimob/view?usp=sharing';
@@ -56,7 +55,7 @@ export default function VelorahHome() {
   useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
-    const set = () => { v.playbackRate = 0.6; };
+    const set = () => { v.playbackRate = 0.5; };
     set();
     v.addEventListener('loadedmetadata', set);
     return () => v.removeEventListener('loadedmetadata', set);
