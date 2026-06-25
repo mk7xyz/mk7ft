@@ -55,7 +55,7 @@ export default function VelorahHome() {
   useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
-    const set = () => { v.playbackRate = 0.5; };
+    const set = () => { v.playbackRate = 0.25; };
     set();
     v.addEventListener('loadedmetadata', set);
     return () => v.removeEventListener('loadedmetadata', set);
