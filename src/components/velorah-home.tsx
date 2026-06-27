@@ -94,22 +94,6 @@ export default function VelorahHome() {
           </aside>
 
           <div className="right r2">
-            <div>
-              <div className="label">work</div>
-              <div className="work-grid">
-                {COMPANIES.map((co) => (
-                  <a key={co.name} className="wcard" href={co.url} target="_blank" rel="noopener noreferrer">
-                    <div className="h">
-                      <span className="nm lc">{co.name}</span>
-                      <span className="badge lc">{co.tag}</span>
-                    </div>
-                    <div className="role lc">{co.role}</div>
-                    <div className="desc lc">{co.desc}</div>
-                  </a>
-                ))}
-              </div>
-            </div>
-
             <div className="statstack">
               <div>
                 <div className="label">traction</div>
@@ -135,6 +119,22 @@ export default function VelorahHome() {
                     </div>
                   ))}
                 </div>
+              </div>
+            </div>
+
+            <div>
+              <div className="label">work</div>
+              <div className="work-grid">
+                {COMPANIES.map((co) => (
+                  <a key={co.name} className="wcard" href={co.url} target="_blank" rel="noopener noreferrer">
+                    <div className="h">
+                      <span className="nm lc">{co.name}</span>
+                      <span className="badge lc">{co.tag}</span>
+                    </div>
+                    <div className="role lc">{co.role}</div>
+                    <div className="desc lc">{co.desc}</div>
+                  </a>
+                ))}
               </div>
             </div>
           </div>
