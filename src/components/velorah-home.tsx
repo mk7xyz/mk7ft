@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 
-const BG_IMAGE = '/office.jpg';
+const BG_IMAGE = '/forest.jpg';
 
 const RESUME =
   'https://drive.google.com/file/d/11iyZC-HZXZPrOEiP8cf4sAi-jgPyimob/view?usp=sharing';
