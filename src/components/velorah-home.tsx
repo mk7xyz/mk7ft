@@ -98,7 +98,7 @@ export default function VelorahHome() {
               <div className="label">work</div>
               <div className="work-grid">
                 {COMPANIES.map((co) => (
-                  <a key={co.name} className="wcard glass" href={co.url} target="_blank" rel="noopener noreferrer">
+                  <a key={co.name} className="wcard" href={co.url} target="_blank" rel="noopener noreferrer">
                     <div className="h">
                       <span className="nm lc">{co.name}</span>
                       <span className="badge lc">{co.tag}</span>
