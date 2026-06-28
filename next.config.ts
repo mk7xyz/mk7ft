@@ -30,12 +30,6 @@ const nextConfig: NextConfig = {
       }
     }
   }
-
-  async rewrites() {
-    return [
-      { source: '/dukkan', destination: '/dukkan.html' }
-    ];
-  },
 } as NextConfig;
 
 export default nextConfig;
